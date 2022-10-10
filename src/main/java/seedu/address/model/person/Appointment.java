@@ -12,7 +12,7 @@ import seedu.address.logic.parser.DateTimeParser;
  * Represents one of the Person's appointments.
  * Guarantees: immutable;
  */
-public class Appointment {
+public class Appointment implements Comparable<Appointment> {
     public static final String MESSAGE_CONSTRAINTS = "Appointments can only take in a date and time in the format,"
             + "d-MMM-yyyy hh:mm a, and it should not be blank";
     public static final Set<Appointment> EMPTY_APPOINTMENTS = new HashSet<>();
@@ -46,6 +46,14 @@ public class Appointment {
         return DateTimeParser.isValidDateTime(dateTime.toString());
     }
 
+    public DateTime getDateTime() {
+        return dateTime;
+    }
+
+    @Override
+    public int compareTo(Appointment other) {
+        return this.dateTime.compareTo(other.dateTime);
+    }
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object

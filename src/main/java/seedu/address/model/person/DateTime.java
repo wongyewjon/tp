@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
  * Represents a date and time with a formatted String value
  * Guarantees: immutable;
  */
-public class DateTime {
+public class DateTime implements Comparable<DateTime> {
     private final LocalDateTime localDateTime;
 
     /**
@@ -27,6 +27,10 @@ public class DateTime {
                 .DateTimeFormatter.ofPattern("d-MMM-yyyy hh:mm a"));
     }
 
+    @Override
+    public int compareTo(DateTime other) {
+        return this.localDateTime.compareTo(other.localDateTime);
+    }
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object

@@ -60,11 +60,11 @@ public class PersonCard extends UiPart<Region> {
 
         if (person.getAppointments().size() == 1) {
             person.getAppointments().stream()
-                    .sorted(Comparator.comparing(appointment -> appointment.toString()))
+                    .sorted(Comparator.comparing(appointment -> appointment.getDateTime()))
                     .forEach(appointment -> appointments.getChildren().add(new Label(appointment.toString())));
         } else {
             person.getAppointments().stream()
-                    .sorted(Comparator.comparing(appointment -> appointment.toString() + ","))
+                    .sorted(Comparator.comparing(appointment -> appointment.getDateTime()))
                     .forEach(appointment -> appointments.getChildren().add(new Label(appointment.toString() + ",")));
         }
     }
