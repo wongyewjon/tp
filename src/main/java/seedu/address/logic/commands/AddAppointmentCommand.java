@@ -21,10 +21,10 @@ public class AddAppointmentCommand extends Command {
     public static final String COMMAND_WORD = "addappt";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Schedules an appointment with a specific client "
-            + "by the index number used in the displayed person list"
-            + "Parameters: "
+            + "by the index number used in the displayed person list. "
             + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_DATE + "DATE AND TIME]...\n"
+            + PREFIX_DATE + "DATE_TIME "
+            + "[" + PREFIX_DATE + "DATE_TIME]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_DATE + "21-Jan-2023 12:30 PM ";
 
