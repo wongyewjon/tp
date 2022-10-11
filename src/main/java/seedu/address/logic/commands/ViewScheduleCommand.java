@@ -23,6 +23,10 @@ public class ViewScheduleCommand extends Command {
             + PREFIX_DATE + "21-Jan-2023";
     private AppointmentOnDatePredicate appointmentOnDatePredicate;
 
+    /**
+     * Creates a ViewScheduleCommand to display all the appointments on a particular
+     * date.
+     */
     public ViewScheduleCommand(AppointmentOnDatePredicate appointmentOnDatePredicate) {
         requireNonNull(appointmentOnDatePredicate);
         this.appointmentOnDatePredicate = appointmentOnDatePredicate;
