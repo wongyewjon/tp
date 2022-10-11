@@ -2,6 +2,7 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
@@ -12,6 +13,7 @@ import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
 import seedu.address.model.person.Appointment;
+import seedu.address.model.person.Date;
 import seedu.address.model.person.DateTime;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
@@ -130,6 +132,17 @@ public class ParserUtil {
         String trimmedDateAndTime = dateAndTime.trim();
         LocalDateTime localDateTime = DateTimeParser.parseLocalDateTimeFromString(trimmedDateAndTime);
         return new DateTime(localDateTime);
+    }
+
+    /**
+     * Parses a {@code String date} into an {@code Date}.
+     * Leading and trailing whitespaces will be trimmed.
+     */
+    public static Date parseDate(String date) {
+        requireNonNull(date);
+        String trimmedDateAndTime = date.trim();
+        LocalDate localDate = DateTimeParser.parseLocalDateFromString(trimmedDateAndTime);
+        return new Date(localDate);
     }
 
     /**
