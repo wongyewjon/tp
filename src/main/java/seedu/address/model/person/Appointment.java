@@ -17,7 +17,7 @@ public class Appointment implements Comparable<Appointment> {
             + "d-MMM-yyyy hh:mm a, and it should not be blank";
     public static final Set<Appointment> EMPTY_APPOINTMENTS = new HashSet<>();
 
-    public final DateTime dateTime;
+    private final DateTime dateTime;
 
     /**
      * Constructs an {@code Appointment}.
@@ -48,6 +48,14 @@ public class Appointment implements Comparable<Appointment> {
 
     public DateTime getDateTime() {
         return dateTime;
+    }
+
+    public Date getDate() {
+        return dateTime.getDate();
+    }
+
+    public Time getTime() {
+        return dateTime.getTime();
     }
 
     @Override

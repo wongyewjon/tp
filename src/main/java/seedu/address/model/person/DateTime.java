@@ -20,6 +20,13 @@ public class DateTime implements Comparable<DateTime> {
         requireNonNull(localDateTime);
         this.localDateTime = localDateTime;
     }
+    public Date getDate() {
+        return new Date(localDateTime.toLocalDate());
+    }
+
+    public Time getTime() {
+        return new Time(localDateTime.toLocalTime());
+    }
 
     @Override
     public String toString() {
