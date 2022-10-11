@@ -4,11 +4,13 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
+import seedu.address.logic.commands.AddAppointmentCommand;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.FindCommand;
+import seedu.address.logic.commands.ViewScheduleCommand;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.exceptions.ParseException;
 
@@ -39,6 +41,9 @@ public class CommandBox extends UiPart<Region> {
             case AddCommand.COMMAND_WORD:
                 resultDisplay.setFeedbackToUser(AddCommand.MESSAGE_USAGE);
                 break;
+            case AddAppointmentCommand.COMMAND_WORD:
+                resultDisplay.setFeedbackToUser(AddAppointmentCommand.MESSAGE_USAGE);
+                break;
             case EditCommand.COMMAND_WORD:
                 resultDisplay.setFeedbackToUser(EditCommand.MESSAGE_USAGE);
                 break;
@@ -47,6 +52,9 @@ public class CommandBox extends UiPart<Region> {
                 break;
             case FindCommand.COMMAND_WORD:
                 resultDisplay.setFeedbackToUser(FindCommand.MESSAGE_USAGE);
+                break;
+            case ViewScheduleCommand.COMMAND_WORD:
+                resultDisplay.setFeedbackToUser(ViewScheduleCommand.MESSAGE_USAGE);
                 break;
             case "":
                 resultDisplay.setFeedbackToUser("");

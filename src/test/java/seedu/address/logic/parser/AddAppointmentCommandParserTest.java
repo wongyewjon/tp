@@ -58,8 +58,8 @@ public class AddAppointmentCommandParserTest {
             fail();
         } catch (ParseException parseException) {
             assertEquals("Invalid command format! \naddappt: Schedules an appointment with "
-                    + "a specific client by the index number used in the displayed person listParameters: "
-                    + "Parameters: INDEX (must be a positive integer) [d/DATE AND TIME]...\n"
+                    + "a specific client by the index number used in the displayed person list. "
+                    + "Parameters: INDEX (must be a positive integer) d/DATE_TIME [d/DATE_TIME]...\n"
                     + "Example: addappt 1 d/21-Jan-2023 12:30 PM " , parseException.getMessage());
         }
     }
@@ -74,8 +74,8 @@ public class AddAppointmentCommandParserTest {
             fail();
         } catch (ParseException parseException) {
             assertEquals("Invalid command format! \naddappt: Schedules an appointment with "
-                    + "a specific client by the index number used in the displayed person listParameters: "
-                    + "Parameters: INDEX (must be a positive integer) [d/DATE AND TIME]...\n"
+                    + "a specific client by the index number used in the displayed person list. "
+                    + "Parameters: INDEX (must be a positive integer) d/DATE_TIME [d/DATE_TIME]...\n"
                     + "Example: addappt 1 d/21-Jan-2023 12:30 PM " , parseException.getMessage());
         }
     }
@@ -90,8 +90,8 @@ public class AddAppointmentCommandParserTest {
             fail();
         } catch (ParseException parseException) {
             assertEquals("Invalid command format! \naddappt: Schedules an appointment with "
-                    + "a specific client by the index number used in the displayed person listParameters: "
-                    + "Parameters: INDEX (must be a positive integer) [d/DATE AND TIME]...\n"
+                    + "a specific client by the index number used in the displayed person list. "
+                    + "Parameters: INDEX (must be a positive integer) d/DATE_TIME [d/DATE_TIME]...\n"
                     + "Example: addappt 1 d/21-Jan-2023 12:30 PM " , parseException.getMessage());
         }
     }
@@ -106,8 +106,8 @@ public class AddAppointmentCommandParserTest {
             fail();
         } catch (ParseException parseException) {
             assertEquals("Invalid command format! \naddappt: Schedules an appointment with "
-                    + "a specific client by the index number used in the displayed person listParameters: "
-                    + "Parameters: INDEX (must be a positive integer) [d/DATE AND TIME]...\n"
+                    + "a specific client by the index number used in the displayed person list. "
+                    + "Parameters: INDEX (must be a positive integer) d/DATE_TIME [d/DATE_TIME]...\n"
                     + "Example: addappt 1 d/21-Jan-2023 12:30 PM " , parseException.getMessage());
         }
     }
