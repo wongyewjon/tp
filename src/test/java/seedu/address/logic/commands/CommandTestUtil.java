@@ -19,6 +19,7 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.EditPersonDescriptor;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
+import seedu.address.model.person.Date;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
@@ -40,9 +41,9 @@ public class CommandTestUtil {
     public static final String VALID_TAG_FRIEND = "friend";
     public static final String VALID_APPOINTMENT_21_JAN_2023 = "21-Jan-2023 01:00 AM";
     public static final String VALID_APPOINTMENT_22_JAN_2023 = "22-Jan-2023 01:00 AM";
-
+    public static final String VALID_DATE_21_JAN_2023 = "21-Jan-2023";
+    public static final String VALID_DATE_22_JAN_2023 = "22-Jan-2023";
     public static final String INVALID_APPOINTMENT_210_JAN_2023 = "210-Jan-2023 01:00 AM";
-
     public static final String NAME_DESC_AMY = " " + PREFIX_NAME + VALID_NAME_AMY;
     public static final String NAME_DESC_BOB = " " + PREFIX_NAME + VALID_NAME_BOB;
     public static final String PHONE_DESC_AMY = " " + PREFIX_PHONE + VALID_PHONE_AMY;
@@ -61,10 +62,8 @@ public class CommandTestUtil {
     public static final String INVALID_ADDRESS_DESC = " " + PREFIX_ADDRESS; // empty string not allowed for addresses
     public static final String INVALID_TAG_DESC = " " + PREFIX_TAG + "hubby*"; // '*' not allowed in tags
     public static final String INVALID_APPOINTMENT_DESC = " " + PREFIX_DATE + INVALID_APPOINTMENT_210_JAN_2023;
-
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
-
     public static final EditPersonDescriptor DESC_AMY;
     public static final EditPersonDescriptor DESC_BOB;
     public static final EditPersonDescriptor DESC_APPOINTMENT;

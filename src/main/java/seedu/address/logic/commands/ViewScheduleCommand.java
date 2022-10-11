@@ -24,6 +24,7 @@ public class ViewScheduleCommand extends Command {
     private AppointmentOnDatePredicate appointmentOnDatePredicate;
 
     public ViewScheduleCommand(AppointmentOnDatePredicate appointmentOnDatePredicate) {
+        requireNonNull(appointmentOnDatePredicate);
         this.appointmentOnDatePredicate = appointmentOnDatePredicate;
     }
 
@@ -45,5 +46,12 @@ public class ViewScheduleCommand extends Command {
         lastShownList.stream().map(x -> x.getAppointments()).flatMap(x -> x.stream())
                 .filter(appointmentOnDatePredicate).forEach(x -> requiredAppointments.add(x));
         return requiredAppointments;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof ViewScheduleCommand// instanceof handles nulls
+                && appointmentOnDatePredicate.equals(((ViewScheduleCommand) other).appointmentOnDatePredicate));
     }
 }

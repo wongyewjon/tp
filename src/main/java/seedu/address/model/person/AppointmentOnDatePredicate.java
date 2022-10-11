@@ -16,4 +16,11 @@ public class AppointmentOnDatePredicate implements Predicate<Appointment> {
     public boolean test(Appointment appointment) {
         return appointment.getDate().equals(date);
     }
+
+    @Override
+    public boolean equals(Object other) {
+        return other == this // short circuit if same object
+                || (other instanceof AppointmentOnDatePredicate// instanceof handles nulls
+                && date.equals(((AppointmentOnDatePredicate) other).date)); // state check
+    }
 }
