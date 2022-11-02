@@ -44,7 +44,7 @@ public class AddCommand extends Command {
             + PREFIX_MONTHLY + "$200 "
             + PREFIX_RISKTAG + "HIGH "
             + PREFIX_PLANTAG + "Savings Plan "
-            + PREFIX_CLIENTTAG + "Current "
+            + PREFIX_CLIENTTAG + "CURRENT "
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "owesMoney";
 
